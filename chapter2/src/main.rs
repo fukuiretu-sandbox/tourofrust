@@ -1,5 +1,5 @@
-fn main() {
-    let x: i32 = std::env::args().nth(1).unwrap().parse().unwrap();
+fn example_match() {
+    let x = 10;
 
     match x {
         0 => {
@@ -18,4 +18,25 @@ fn main() {
             println!("found something else!");
         }
     }
+}
+
+fn example_loop() {
+    let mut x = 0;
+
+    let v = loop {
+        x += 1;
+        if x == 13 {
+            break "13を発見";
+        }
+    };
+
+    println!("loopの戻り値: {}", v)
+}
+
+fn main() {
+    // match
+    example_match();
+
+    // loop
+    example_loop();
 }
