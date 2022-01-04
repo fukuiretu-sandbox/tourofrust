@@ -33,10 +33,31 @@ fn example_loop() {
     println!("loopの戻り値: {}", v)
 }
 
+fn example_block() -> i32 {
+    let x = 42;
+    let v = if x < 42 { -1 } else { 1 };
+    println!("ifより: {}", v);
+
+    let food = "ハンバーガー";
+    let result = match food {
+        "ホットドック" => "ホットドックです",
+        _ => "ホットドックではありません",
+    };
+    println!("食品の識別:{}", result);
+
+    let v = {
+        let a = 1;
+        let b = 2;
+        a + b
+    };
+    v + 4
+}
+
 fn main() {
     // match
     example_match();
-
     // loop
     example_loop();
+    // block
+    println!("block result: {}", example_block().to_string());
 }
